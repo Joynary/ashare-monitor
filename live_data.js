@@ -23,7 +23,7 @@ async function refreshRealQuotes() {
       em(`${EM}/stock/get?secid=0.399006&fields=f43,f44,f45,f46,f47,f48,f57,f58,f60,f170,f169&fltt=2&invt=2`)
     ]);
     const rows = list.diff || [];
-    const idx = [sh, sz, cy].map(q => q.data).filter(Boolean);
+    const idx = [sh, sz, cy];
     document.querySelector('.notice').textContent = '真实行情来源：东方财富公开行情接口。行情仅在交易时段变化；财报、龙虎榜、分时买卖点未接入真实数据，已从演示值改为明确提示。'; document.querySelector('#trading-date').textContent = '最新报价 · ' + new Date().toLocaleDateString('zh-CN');
     document.querySelector('.right .live').textContent = '● 东方财富实时行情';
     document.querySelector('#clock').textContent = '行情更新 · ' + new Date().toLocaleTimeString('zh-CN', {hour12:false});
