@@ -1,0 +1,16 @@
+[Unit]
+Description=Fusionveil AKShare API
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/fusionveil
+ExecStart=/opt/fusionveil/venv/bin/python /opt/fusionveil/server.py
+Restart=always
+RestartSec=5
+User=www-data
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
+
